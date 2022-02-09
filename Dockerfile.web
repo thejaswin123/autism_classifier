@@ -1,0 +1,8 @@
+FROM python:3.8
+
+WORKDIR /autism_classifier
+
+COPY . /autism_classifier
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["sh", "-c", "streamlit run  app.py --server.port $PORT"] 
